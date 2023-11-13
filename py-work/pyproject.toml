@@ -5,6 +5,7 @@ description = "Add your description here"
 dependencies = [
     "numpy>=1.24.4",
     "Pillow>=10.1.0",
+    "scipy>=1.10.1",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
