@@ -46,3 +46,18 @@ mount google drive
 
 - 1. in notebook toolbar, runtime > restart runtime
 - 2. in .ipynb, import imp, imp.reload(module)
+
+## run
+
+```sh
+# current dir is /content/
+
+!git clone ${git-repository}
+%cd ${work dir}
+!git pull
+!git checkout {branch}
+```
+
+```sh
+! python src/x.py
+```
