@@ -4,7 +4,7 @@ smootihg filter
 
 import numpy as np
 
-from PIL.Image import Image
+from PIL import Image
 
 
 def generate_gaussian_kernel(
@@ -39,6 +39,18 @@ def convolution(img: Image.Image, kernel: np.ndarray, x: int, y: int):
             h = kernel[y_kernel + kernel_height // 2, x_kernel + kernel_width // 2]
             value += h * img.getpixel((x_img, y_img))
     return value
+
+
+def apply_filter(img: Image.Image, kernel: np.ndarray):
+    width, height = img.size
+
+    img_filtered = Image.new(mode="L", size=(width, height))
+
+    for y in range(height):
+        for x in range(width):
+            filtered_value = convolution(img, kernel, x, y)
+            img_filtered.putpixel((x, y), int(filtered_value))
+    return img_filtered
 
 
 def main():
