@@ -4,7 +4,7 @@ smootihg filter
 
 import numpy as np
 
-from PIL.Imagew import Image
+from PIL.Image import Image
 
 
 def generate_gaussian_kernel(
