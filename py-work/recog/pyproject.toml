@@ -1,0 +1,39 @@
+[project]
+name = "recog"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "fg51", email = "zknsftk1msrk@gmail.com" }
+]
+dependencies = [
+    "Pillow>=10.2.0",
+    "numpy>=1.24.4",
+    "scipy>=1.10.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "recog:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pyright]
+include = ["src"]
+exclude = ["**/node_modules", "**/__pycache__", "src/typestubs" ]
+executionEnvironments = [ {root = "src"} ]
+#stubPath = "src/stubs"
+venvPath = "."
+venv = ".venv"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/recog"]
