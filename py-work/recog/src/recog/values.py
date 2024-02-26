@@ -3,6 +3,8 @@ from pathlib import Path
 from numpy import float64
 from numpy.typing import NDArray
 
+from PIL.Image import Image
+
 DATA = Path("../../data")
 
 
